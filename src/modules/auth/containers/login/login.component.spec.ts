@@ -11,6 +11,7 @@ import { LoginComponent } from './login.component';
     template: `
         <sb-login [someInput]="someInput" (someFunction)="someFunction($event)"></sb-login>
     `,
+    standalone: false
 })
 class TestHostComponent {
     // someInput = 1;

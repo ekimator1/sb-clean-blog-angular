@@ -11,6 +11,7 @@ import { LayoutAuthComponent } from './layout-auth.component';
             (someFunction)="someFunction($event)"
         ></sb-layout-auth>
     `,
+    standalone: false
 })
 class TestHostComponent {
     // someInput = 1;

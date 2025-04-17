@@ -11,6 +11,7 @@ import { HomeComponent } from './home.component';
     template: `
         <sb-home [someInput]="someInput" (someFunction)="someFunction($event)"></sb-home>
     `,
+    standalone: false
 })
 class TestHostComponent {
     // someInput = 1;

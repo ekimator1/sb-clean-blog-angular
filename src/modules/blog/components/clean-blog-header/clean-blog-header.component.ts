@@ -6,6 +6,7 @@ import { DomSanitizer, SafeStyle } from '@angular/platform-browser';
     changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './clean-blog-header.component.html',
     styleUrls: ['clean-blog-header.component.scss'],
+    standalone: false
 })
 export class CleanBlogHeaderComponent implements OnInit {
     @Input() backgroundImage!: string;

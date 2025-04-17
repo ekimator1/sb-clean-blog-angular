@@ -8,6 +8,7 @@ import { CardComponent } from './card.component';
     template: `
         <sb-card [background]="background" [color]="color"></sb-card>
     `,
+    standalone: false
 })
 class TestHostComponent {
     background!: string;

@@ -5,6 +5,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './about.component.html',
     styleUrls: ['about.component.scss'],
+    standalone: false
 })
 export class AboutComponent implements OnInit {
     constructor() {}

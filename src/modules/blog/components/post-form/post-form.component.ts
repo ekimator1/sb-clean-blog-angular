@@ -10,6 +10,7 @@ import { CreatePostPayload, UpdatePostPayload } from '@start-bootstrap/sb-clean-
     changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './post-form.component.html',
     styleUrls: ['post-form.component.scss'],
+    standalone: false
 })
 export class PostFormComponent implements OnInit {
     @Input() post?: Post;

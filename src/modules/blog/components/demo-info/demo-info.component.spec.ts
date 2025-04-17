@@ -8,6 +8,7 @@ import { DemoInfoComponent } from './demo-info.component';
     template: `
         <sb-demo-info [someInput]="someInput" (someFunction)="someFunction($event)"></sb-demo-info>
     `,
+    standalone: false
 })
 class TestHostComponent {
     // someInput = 1;

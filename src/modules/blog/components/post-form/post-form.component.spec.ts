@@ -14,6 +14,7 @@ import { PostFormComponent } from './post-form.component';
     template: `
         <sb-post-form [post]="post"></sb-post-form>
     `,
+    standalone: false
 })
 class TestHostComponent {
     post!: Post;

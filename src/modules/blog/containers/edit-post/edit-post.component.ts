@@ -10,6 +10,7 @@ import { switchMap } from 'rxjs/operators';
     changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './edit-post.component.html',
     styleUrls: ['edit-post.component.scss'],
+    standalone: false
 })
 export class EditPostComponent implements OnInit {
     post$!: Observable<Post | null>;

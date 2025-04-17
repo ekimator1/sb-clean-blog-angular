@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
     selector: 'sb-top-nav',
     templateUrl: './top-nav.component.html',
     styleUrls: ['top-nav.component.scss'],
+    standalone: false
 })
 export class TopNavComponent implements OnInit, OnDestroy {
     subscription: Subscription = new Subscription();
