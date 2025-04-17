@@ -1,10 +1,4 @@
-import {
-    HttpEvent,
-    HttpHandler,
-    HttpInterceptor,
-    HttpRequest,
-    HttpResponse,
-} from '@angular/common/http';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ConfigService, UtilityService } from '@common/services';
 import { CreatePostPayload, UpdatePostPayload } from '@start-bootstrap/sb-clean-blog-shared-types';
@@ -104,7 +98,7 @@ export class DemoInterceptor implements HttpInterceptor {
                             ? `url("${updatePostPayload.backgroundImage}")`
                             : undefined;
 
-                        Object.assign(foundPost, updatePostPayload);
+                        Object.assign(foundPost as any, updatePostPayload);
                         this._savePosts();
                         return of(new HttpResponse({ status: 200, body: undefined }));
                     }

@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { ConfigService } from '@common/services';
@@ -19,13 +19,15 @@ describe('BlogService', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            imports: [HttpClientTestingModule],
-            providers: [
-                BlogService,
-                { provide: Router, useValue: new RouterStub() },
-                { provide: ConfigService, useValue: new ConfigServiceStub() },
-            ],
-        });
+    imports: [],
+    providers: [
+        BlogService,
+        { provide: Router, useValue: new RouterStub() },
+        { provide: ConfigService, useValue: new ConfigServiceStub() },
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+    ]
+});
 
         blogService = TestBed.inject(BlogService);
         httpClient = TestBed.inject(HttpClient);
