@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Post } from '@modules/blog/models';
 import { BlogService } from '@modules/blog/services';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
+import { CreatePostPayload, UpdatePostPayload } from '@start-bootstrap/sb-clean-blog-shared-types';
 
 @Component({
     selector: 'sb-post-form',
@@ -41,20 +42,22 @@ export class PostFormComponent implements OnInit {
         if (this.newPostForm.status === 'VALID') {
             if (!this.post) {
                 this.blogService
-                    .createPost$(this.newPostForm.value)
+                    .createPost$(this.newPostForm.value as CreatePostPayload)
                     .subscribe(response => console.log(response));
             } else {
                 this.blogService
-                    .updatePost$(this.post, this.newPostForm.value)
+                    .updatePost$(this.post, this.newPostForm.value as UpdatePostPayload)
                     .subscribe(response => console.log(response));
             }
         }
 
+        this.newPostForm.markAllAsTouched();
+
         // tslint:disable-next-line: forin
-        for (const key in this.newPostForm.controls) {
-            const control = this.newPostForm.controls[key];
-            control.markAllAsTouched();
-        }
+        // for (const key in this.newPostForm.controls) {
+        //     const control = this.newPostForm.controls[key];
+        //     control.markAllAsTouched();
+        // }
     }
 
     deletePost() {

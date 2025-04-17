@@ -20,16 +20,17 @@ export class LoginComponent implements OnInit {
         if (this.loginForm.status === 'VALID') {
             this.authService
                 .login$({
-                    password: this.loginForm.value.password,
+                    password: this.loginForm.value.password!,
                 })
                 .subscribe();
         }
 
         // tslint:disable-next-line: forin
-        for (const key in this.loginForm.controls) {
-            const control = this.loginForm.controls[key];
-            control.markAllAsTouched();
-        }
+        // for (const control in this.loginForm.controls) {
+        //     const control = this.loginForm.controls[key] as any;
+        //     control.markAllAsTouched();
+        // }
+        this.loginForm.markAllAsTouched();
     }
 
     /* Accessor Methods */
