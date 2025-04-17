@@ -7,6 +7,7 @@ import { AuthService } from '@modules/auth/services';
     changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './login.component.html',
     styleUrls: ['login.component.scss'],
+    standalone: false
 })
 export class LoginComponent implements OnInit {
     loginForm = this.fb.group({

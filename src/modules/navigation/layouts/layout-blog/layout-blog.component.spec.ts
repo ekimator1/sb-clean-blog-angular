@@ -8,6 +8,7 @@ import { LayoutBlogComponent } from './layout-blog.component';
     template: `
         <sb-layout-blog [someInput]="someInput" (someFunction)="someFunction($event)"></sb-layout-blog>
     `,
+    standalone: false
 })
 class TestHostComponent {
     // someInput = 1;

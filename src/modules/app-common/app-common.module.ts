@@ -1,5 +1,5 @@
 /* tslint:disable: ordered-imports*/
-import { NgModule, APP_INITIALIZER, ModuleWithProviders, SecurityContext } from '@angular/core';
+import { NgModule, ModuleWithProviders, SecurityContext, inject, provideAppInitializer } from '@angular/core';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { CommonModule } from '@angular/common';
@@ -49,12 +49,10 @@ export class AppCommonModule {
                 ...appCommonServices.services,
                 ...authServices.services,
                 ...appCommonGuards.guards,
-                {
-                    provide: APP_INITIALIZER,
-                    useFactory: configServiceFactory,
-                    multi: true,
-                    deps: [appCommonServices.ConfigService, appCommonServices.PrismService],
-                },
+                provideAppInitializer(() => {
+        const initializerFn = (configServiceFactory)(inject(appCommonServices.ConfigService));
+        return initializerFn();
+      }),
                 {
                     provide: HTTP_INTERCEPTORS,
                     useFactory: authInterceptorFactory,

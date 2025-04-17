@@ -17,6 +17,7 @@ import { PostComponent } from './post.component';
     template: `
         <sb-post [someInput]="someInput" (someFunction)="someFunction($event)"></sb-post>
     `,
+    standalone: false
 })
 class TestHostComponent {
     // someInput = 1;

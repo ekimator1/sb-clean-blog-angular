@@ -5,6 +5,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
     changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './card-view-details.component.html',
     styleUrls: ['card-view-details.component.scss'],
+    standalone: false
 })
 export class CardViewDetailsComponent implements OnInit {
     @Input() background!: string;

@@ -8,6 +8,7 @@ import { AboutComponent } from './about.component';
     template: `
         <sb-about [someInput]="someInput" (someFunction)="someFunction($event)"></sb-about>
     `,
+    standalone: false
 })
 class TestHostComponent {
     // someInput = 1;

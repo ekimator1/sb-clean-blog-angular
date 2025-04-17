@@ -8,6 +8,7 @@ import { CleanBlogHeaderComponent } from './clean-blog-header.component';
     template: `
         <sb-clean-blog-header [someInput]="someInput" (someFunction)="someFunction($event)"></sb-clean-blog-header>
     `,
+    standalone: false
 })
 class TestHostComponent {
     // someInput = 1;

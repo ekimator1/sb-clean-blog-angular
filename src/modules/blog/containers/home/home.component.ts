@@ -15,6 +15,7 @@ import { Observable, Subscription } from 'rxjs';
     changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './home.component.html',
     styleUrls: ['home.component.scss'],
+    standalone: false
 })
 export class HomeComponent implements OnInit, OnDestroy {
     subscription: Subscription = new Subscription();

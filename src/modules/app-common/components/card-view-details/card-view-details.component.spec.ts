@@ -8,6 +8,7 @@ import { CardViewDetailsComponent } from './card-view-details.component';
     template: `
         <sb-card-view-details [background]="background" [color]="color"></sb-card-view-details>
     `,
+    standalone: false
 })
 class TestHostComponent {
     background!: string;

@@ -11,6 +11,7 @@ import { PostPreviewComponent } from './post-preview.component';
             (someFunction)="someFunction($event)"
         ></sb-post-preview>
     `,
+    standalone: false
 })
 class TestHostComponent {
     // someInput = 1;

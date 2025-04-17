@@ -10,6 +10,7 @@ import { VersionComponent } from './version.component';
     template: `
         <sb-version></sb-version>
     `,
+    standalone: false
 })
 class TestHostComponent {}
 

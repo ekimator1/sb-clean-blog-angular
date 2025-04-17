@@ -11,6 +11,7 @@ import { switchMap, tap } from 'rxjs/operators';
     changeDetection: ChangeDetectionStrategy.OnPush,
     templateUrl: './post.component.html',
     styleUrls: ['post.component.scss'],
+    standalone: false
 })
 export class PostComponent implements OnInit, OnDestroy {
     static id = 'PostComponent';

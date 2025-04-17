@@ -11,6 +11,7 @@ import { EditPostComponent } from './edit-post.component';
     template: `
         <sb-edit-post [someInput]="someInput" (someFunction)="someFunction($event)"></sb-edit-post>
     `,
+    standalone: false
 })
 class TestHostComponent {
     // someInput = 1;

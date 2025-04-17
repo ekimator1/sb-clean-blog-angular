@@ -8,6 +8,7 @@ import { NewPostComponent } from './new-post.component';
     template: `
         <sb-new-post [someInput]="someInput" (someFunction)="someFunction($event)"></sb-new-post>
     `,
+    standalone: false
 })
 class TestHostComponent {
     // someInput = 1;
