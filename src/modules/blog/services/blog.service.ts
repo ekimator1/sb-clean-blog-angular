@@ -10,6 +10,7 @@ import {
 } from '@start-bootstrap/sb-clean-blog-shared-types';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { PaginatedResponse } from '@common/models/app-common.model'
 
 @Injectable()
 export class BlogService {
@@ -21,10 +22,10 @@ export class BlogService {
 
     getPosts$(): Observable<Post[]> {
         return this.http
-            .get<ResultsPost[]>(`${this.configService.config.sbCleanBlogNodeURL}/api/latest/posts`)
+            .get<PaginatedResponse<ResultsPost>>(`${this.configService.config.sbCleanBlogNodeURL}/api/latest/posts`)
             .pipe(
                 map(posts =>
-                    (posts as Post[]).map(post => {
+                    (posts.content as Post[]).map(post => {
                         return post;
                     })
                 )
